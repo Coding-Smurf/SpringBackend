@@ -42,6 +42,11 @@ public class Controller {
         return readData.readData();
     }
 
+    @GetMapping("/")
+    public String home() {
+        return "Hello World!";
+    }
+
     @PutMapping("/modify")
     public HttpStatus update(@RequestBody String body) {
         Gson gson = new Gson();
