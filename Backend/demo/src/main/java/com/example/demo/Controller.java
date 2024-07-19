@@ -47,62 +47,23 @@ public class Controller {
     public String home() {
         //test routes that exist
         String result = "";
-        String route1 = "/SpringBackend/Backend/demo/src/main/java/com/example/demo/Controller.java";
-        if (new File(route1).exists()) {
-            result += "Route 1 exists\n";
-        } else {
-            result += "Route 1 does not exist\n";
-        }
-        String route2 = "/Backend/demo/src/main/java/com/example/demo/Data.java";
-        if (new File(route2).exists()) {
-            result += "Route 2 exists\n";
-        } else {
-            result += "Route 2 does not exist\n";
-        }
-        String route3 = "/demo/src/main/java/com/example/demo/Data.java";
-        if (new File(route3).exists()) {
-            result += "Route 3 exists\n";
-        } else {
-            result += "Route 3 does not exist\n";
-        }
-        String route4 = "../demo/Controller.java";
-        if (new File(route4).exists()) {
-            result += "Route 4 exists\n";
-        } else {
-            result += "Route 4 does not exist\n";
-        }
-        //test routes that do not exist
-        String route5 = "/SpringBackend/Backend/demo/src/main/java/com/example/demo/Controller.java";
-        if (new File(route5).exists()) {
-            result += "Route 5 exists\n";
-        } else {
-            result += "Route 5 does not exist\n";
-        }
-        String route6 = "/Backend/demo/src/main/java/com/example/demo/Data.java";
-        if (new File(route6).exists()) {
-            result += "Route 6 exists\n";
-        } else {
-            result += "Route 6 does not exist\n";
-        }
-        String route7 = "/demo/src/main/java/com/example/demo/Data.java";
-        if (new File(route7).exists()) {
-            result += "Route 7 exists\n";
-        } else {
-            result += "Route 7 does not exist\n";
-        }
-        String route8 = "../demo/Controller.java";
-        if (new File(route8).exists()) {
-            result += "Route 8 exists\n";
-        } else {
-            result += "Route 8 does not exist\n";
-        }
         String route9 = "/app/";
         //if directory exists
         if (new File(route9).exists()) {
             result += "Route 9 exists\n";
+            //add as well the subdirectories
+            //find the subdirectories
+            File[] files = new File(route9).listFiles();
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    result += file.getName() + "\n";
+                }
+            }
         } else {
             result += "Route 9 does not exist\n";
         }
+
+        
 
         return result;
     }
