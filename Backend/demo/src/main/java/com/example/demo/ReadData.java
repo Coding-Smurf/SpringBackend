@@ -23,7 +23,7 @@ public class ReadData {
     public String readData(){
          
         String projectRoot = System.getProperty("user.dir");
-        String dataPath = projectRoot + "/Backend/demo/src/main/resources/testResources/database.csv";
+        String dataPath = projectRoot + "/src/main/resources/testResources/database.csv";
 
         try (FileReader filereader = new FileReader(dataPath);
             CSVReader csvReader = new CSVReaderBuilder(filereader)
@@ -54,7 +54,7 @@ public class ReadData {
 
     public void deleteById(int id){
         String projectRoot = System.getProperty("user.dir");
-        String dataPath = projectRoot + "/Backend/demo/src/main/resources/testResources/database.csv";
+        String dataPath = projectRoot + "/src/main/resources/testResources/database.csv";
 
         String idToDelete = Integer.toString(id);
 
