@@ -49,7 +49,7 @@ public class Data {
     public void save() {
         
         String projectRoute = System.getProperty("user.dir");
-        String route = projectRoute + "/Backend/demo/src/main/resources/testResources/database.csv";
+        String route = "projectRoute" + "/src/main/resources/testResources/database.csv";
 
         try {
             //open the file and get the highest value of the first column of the csv
