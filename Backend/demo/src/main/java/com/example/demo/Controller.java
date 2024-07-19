@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import java.io.File;
 
 import com.google.gson.Gson;
 
@@ -44,7 +45,33 @@ public class Controller {
 
     @GetMapping("/")
     public String home() {
-        return "Hello World!";
+        //test routes that exist
+        String result = "";
+        String route1 = "/SpringBackend/Backend/demo/src/main/java/com/example/demo/Controller.java";
+        if (new File(route1).exists()) {
+            result += "Route 1 exists\n";
+        } else {
+            result += "Route 1 does not exist\n";
+        }
+        String route2 = "/Backend/demo/src/main/java/com/example/demo/Data.java";
+        if (new File(route2).exists()) {
+            result += "Route 2 exists\n";
+        } else {
+            result += "Route 2 does not exist\n";
+        }
+        String route3 = "/demo/src/main/java/com/example/demo/Data.java";
+        if (new File(route3).exists()) {
+            result += "Route 3 exists\n";
+        } else {
+            result += "Route 3 does not exist\n";
+        }
+        String route4 = "../demo/Controller.java";
+        if (new File(route4).exists()) {
+            result += "Route 4 exists\n";
+        } else {
+            result += "Route 4 does not exist\n";
+        }
+        return result;
     }
 
     @PutMapping("/modify")
