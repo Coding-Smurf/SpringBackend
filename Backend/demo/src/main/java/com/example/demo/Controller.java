@@ -96,7 +96,14 @@ public class Controller {
         } else {
             result += "Route 8 does not exist\n";
         }
-        
+        String route9 = "/app/";
+        //if directory exists
+        if (new File(route9).exists()) {
+            result += "Route 9 exists\n";
+        } else {
+            result += "Route 9 does not exist\n";
+        }
+
         return result;
     }
 
