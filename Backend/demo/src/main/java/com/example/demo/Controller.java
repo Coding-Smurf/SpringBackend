@@ -71,6 +71,32 @@ public class Controller {
         } else {
             result += "Route 4 does not exist\n";
         }
+        //test routes that do not exist
+        String route5 = "/SpringBackend/Backend/demo/src/main/java/com/example/demo/Controller.java";
+        if (new File(route5).exists()) {
+            result += "Route 5 exists\n";
+        } else {
+            result += "Route 5 does not exist\n";
+        }
+        String route6 = "/Backend/demo/src/main/java/com/example/demo/Data.java";
+        if (new File(route6).exists()) {
+            result += "Route 6 exists\n";
+        } else {
+            result += "Route 6 does not exist\n";
+        }
+        String route7 = "/demo/src/main/java/com/example/demo/Data.java";
+        if (new File(route7).exists()) {
+            result += "Route 7 exists\n";
+        } else {
+            result += "Route 7 does not exist\n";
+        }
+        String route8 = "../demo/Controller.java";
+        if (new File(route8).exists()) {
+            result += "Route 8 exists\n";
+        } else {
+            result += "Route 8 does not exist\n";
+        }
+        
         return result;
     }
 
